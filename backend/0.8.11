@@ -1,8 +1,0 @@
-Collecting python-docx
-  Downloading python_docx-1.1.2-py3-none-any.whl.metadata (2.0 kB)
-Requirement already satisfied: lxml>=3.1.0 in c:\users\poppo\anaconda3\envs\video\lib\site-packages (from python-docx) (5.2.2)
-Requirement already satisfied: typing-extensions>=4.9.0 in c:\users\poppo\anaconda3\envs\video\lib\site-packages (from python-docx) (4.12.2)
-Downloading python_docx-1.1.2-py3-none-any.whl (244 kB)
-   ---------------------------------------- 244.3/244.3 kB 1.9 MB/s eta 0:00:00
-Installing collected packages: python-docx
-Successfully installed python-docx-1.1.2

@@ -22,7 +22,7 @@ A full-stack agentic platform that allows users to upload their resume and recei
 ### Prerequisites
 - Node.js (v18+)
 - Python (v3.9+)
-- Groq API key (or another AI API key)
+- Groq API key
 
 ### Frontend Setup
 1. Navigate to `frontend/`:
