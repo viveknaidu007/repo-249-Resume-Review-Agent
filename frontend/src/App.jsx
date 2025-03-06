@@ -25,7 +25,8 @@ function App() {
     console.log('Uploading file:', file.name, file.type);
 
     try {
-      const response = await axios.post('http://localhost:8000/analyze', formData);
+      const backendurl = import.meta.env.VITE_BACKEND_URL
+      const response = await axios.post(`${backendurl}/analyze`, formData);
       console.log('Response data:', response.data);
       setFeedback(response.data);
     } catch (error) {

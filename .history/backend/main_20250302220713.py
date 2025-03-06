@@ -4,17 +4,13 @@ from ai.resume_analyzer import ResumeAnalyzer
 import PyPDF2
 from docx import Document  # Updated import for python-docx
 import uvicorn  # Still needed for programmatic running
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 app = FastAPI()
 
 # Enable CORS to allow frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("FRONTEND_URL")],  # Frontend URL
+    allow_origins=["http://localhost:3000"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
