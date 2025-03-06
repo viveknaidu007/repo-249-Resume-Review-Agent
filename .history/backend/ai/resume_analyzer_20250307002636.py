@@ -12,26 +12,25 @@ class ResumeAnalyzer:
         self.client = Groq(api_key=GROQ_API)
 
     def analyze_resume(self, resume_text: str) -> dict:
-        # Use triple quotes and ensure proper escaping of curly braces in the JSON structure
         prompt = f"""
         You are a career coach. Analyze the following resume and provide detailed feedback in JSON format with the following structure:
         
-        {{
-            "feedback": {{
+        {
+            "feedback": {
                 "strengths": ["list of strengths"],
                 "areas_for_improvement": ["list of areas needing improvement"]
-            }},
-            "next_steps": {{
+            },
+            "next_steps": {
                 "certifications": ["list of recommended certifications"],
                 "networking": ["list of networking suggestions"],
                 "continuous_learning": ["list of learning recommendations"]
-            }},
-            "advice": {{
+            },
+            "advice": {
                 "personal_branding": ["list of branding tips"],
                 "career_growth": ["list of growth strategies"],
                 "interview_preparation": ["list of interview tips"]
-            }}
-        }}
+            }
+        }
         
         Provide specific, actionable advice tailored to the resume content. If certain sections are missing from the resume, suggest general improvements relevant to typical career progression.
         
@@ -45,7 +44,7 @@ class ResumeAnalyzer:
             response = self.client.chat.completions.create(
                 model="mixtral-8x7b-32768",
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=1500,
+                max_tokens=1500,  # Increased to accommodate detailed response
             )
 
             raw_output = response.choices[0].message.content
